@@ -5,6 +5,7 @@
 
         //your code...
         function tekCamp() {}
+           
         // tekCamp();
 
 
@@ -13,20 +14,22 @@
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
         //your code...
-        function farenheitCelsius() {
+        function farenheitCelsius(farenheit) {
+            let celsius = (farenheit - 32) / 1.8;
+            return celsius;
 
         }
-
-
-
-
+        farenheitCelsius(54);
         /************************************************************************************/
         //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
         //your code...
-        function celsiusFarenheit() {
-
-        }
+        function celsiusFarenheit(celsius) {
+             let fahrenheit = (celsius * (9/5)) + 32; // fahenheit = celsius * 9/5 + 32 works too.
+            return fahrenheit;
+          }
+            celsiusFarenheit(30);
+        
 
 
 
@@ -37,9 +40,14 @@
 
         //your code...
         function canVote(age) {
+            if (age >= 18)
+            return true;
+            else if(age <18)
             return false;
         }
-
+        const ableToVote = canVote(17);
+        console.log(ableToVote);
+        
 
 
 
@@ -100,12 +108,12 @@
         // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
 
         //your code...
-
-
-
+            for ( i=0; i<10;)
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
+            foodArray[5] = "school";
+            console.log(foodArray[5]);
 
         const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
         // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
@@ -250,10 +258,13 @@
 
         const nums = [1,2,3,4,5];
         // Square every number in the array.  Store the squares in a new array.
+        
 
         //your code...
 
+        const squaredNums = nums.map(n => n*n)
 
+        console.log(squaredNums);
 
 
 
@@ -262,6 +273,9 @@
 
         //your code...
 
+        const greaterThanFive = fivePlus.filter(fivePlus => fivePlus > 5)
+
+        console.log(greaterThanFive);
 
 
 
@@ -277,7 +291,7 @@
 
         const showNums = [12,22,33,44,55,66,77,88,99,101];
         //Print out the value of each number divided by 2.  There is no need to store the output in an array.
-
+        showNums.forEach(showNums => console.log(showNums / 2));
 
 
         /************************************************************* */
@@ -522,6 +536,5 @@ module.exports = {
 
 
 //*************************************** */
-
 
 
