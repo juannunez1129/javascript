@@ -4,36 +4,42 @@
         // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
         //your code...
-        function tekCamp() {}
-           
-        // tekCamp();
+        function tekCamp() {
+            for (let i = 1; i<=100; i++){
+                if (i % 3 === 0  && i % 5 ===0)
+                console.log("TEKcamp");
 
+                if (i % 3 === 0)
+                console.log("TEK");
+                
+                if (i % 5 === 0)
+                console.log("camp");
 
+                console.log(i);
+            }
+                
+        }
+        tekCamp();
 
         /************************************************************************************/
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
         //your code...
         function farenheitCelsius(farenheit) {
-            let celsius = (farenheit - 32) / 1.8;
-            return celsius;
-
+            let celsius = (farenheit - 32) * 5/9;
+            console.log(celsius);
         }
-        farenheitCelsius(54);
+        farenheitCelsius(50);
+
         /************************************************************************************/
         //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
         //your code...
         function celsiusFarenheit(celsius) {
-             let fahrenheit = (celsius * (9/5)) + 32; // fahenheit = celsius * 9/5 + 32 works too.
-            return fahrenheit;
+            let farenheit = (celsius * (9/5)) + 32; 
+            console.log(farenheit);
           }
-            celsiusFarenheit(30);
-        
-
-
-
-
+        celsiusFarenheit(10);
 
         /************************************************************************************/
         // Write a function to determine if someone is old enough to vote.  The function should return a boolean of true or false.
@@ -45,50 +51,47 @@
             else if(age <18)
             return false;
         }
-        const ableToVote = canVote(17);
+        const ableToVote = canVote(19);
         console.log(ableToVote);
-        
-
-
-
-
-
-
+    
         /************************************************************************************/
         // Write a function that converts a string to an array. It should return an array.  
 
         //your code...
-        function strToArr() {
-            return [];
+        function strToArr(someString) {
+            var array = someString.split(" ");
+            return array;
         }
-
-
-
-
-
-
+        console.log(strToArr("random text"));
 
         /************************************************************************************/
         // Write a function that reverses your telephone number.  It should return the reversed telephone number.
 
         //your code...
         function reversePhone(number) {
-            
+            let numberArray = number.toString()
+            .split("")
+            .reverse().join("");
+            return numberArray;
         }
-
-
-
-
+        console.log(reversePhone(9723457865));
 
         /************************************************************************************/
         // Write a function that returns a car object using some given info about your car. Required inputs are the make, model, year, and color.
 
         //your code...
 
+        var myCar = {
+            make : "Chevrolet",
+            model : "Silverado",
+            year : 2015,
+            color : "white"
+        };
 
-
-
-
+        function myCarDetail(){
+            console.log(myCar)
+        }
+        myCarDetail();
 
         /************************************************************************************/
         // Write a function that accepts a list of numbers.  The function should identify each number as being even or odd.  The function should output a set of key value pairs, with the key being the number, and the value being the string "even" or "odd".
@@ -97,18 +100,41 @@
 
         //your code...
 
+        function evenOrOddNumbers(number){
+            let odd = [];
+            let even = [];
 
+            for (let i = 0; i < number.length; i++){
+                if (number[i] % 2 === 0){
+                    even.push(number[i]);
+                }
+                else {
+                    odd.push(number[i]);
+                }
+            }
+            const arrayObjects = {
+                odd,
+                even,
+                };
 
+            return arrayObjects;
 
-
-
+        }
+        console.log(evenOrOddNumbers([1,2,3]));
 
         /************************************************************************************/
         const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
         // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
 
         //your code...
-            for ( i=0; i<10;)
+
+        function arrayNumbers(){
+            for (let i  = 0; i < numbers.length; i += 3 ){
+                console.log(numbers[i]);
+                }
+        }
+        arrayNumbers();
+
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
@@ -163,42 +189,55 @@
 
         /************************************************************* */
         // Refactor the following code using a switch statement:
+        function day(day){
+            switch (day) {
+                case "monday":
+                    console.log("we got a long week ahead of us...");
+                    break;
+                case "tuesday":
+                    console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+                    break;
+                case "wednesday":
+                    console.log("We are smack dab in the middle of the week");
+                    break;
+                case "thursday":
+                    console.log("Thursday night... the mood is right");
+                    break;
+                case "friday":
+                    console.log("TGIF.  Friday truly is the best day of the week!")
+                    break;
+                default:
+                    console.log("It's a weekend!")
+                    break;
 
-        const day = "friday";
-
-        if(day === "monday") {
-            console.log("we got a long week ahead of us...");
-        } else if(day === "tuesday") {
-            console.log("tuesday's are still beterr than mondays, but LONG way to go still");
-        } else if (day === "wednesday") {
-            console.log("We are smack dab in the middle of the week");
-        } else if (day === "thursday") {
-            console.log("Thursday night... the mood is right");
-        } else if (day === "friday") {
-            console.log("TGIF.  Friday truly is the best day of the week!")
-        } else {
-            console.log("It's a weekend!")
+            }
         }
-
-
+        day("tuesday");
 
         /************************************************************* */
         // Refactor the following statements to use ternary expressions:
 
-        const age = 10;
-        if (age > 21) console.log("adult"); else {
-            console.log("minor");
+        // const age = 10;
+        // if (age > 21) console.log("adult"); else {
+        //     console.log("minor");
+        // }
+
+        // if (age > 13 && age < 19) console.log('teen'); else {
+        //     console.log("not a teenager");
+        // };
+
+        // if (age > 65) console.log("retired"); else {
+        //     console.log("still working...");
+        // }
+
+        function ternaryExpression(){
+            let age = 10;
+            age > 21 ? console.log("adult") : console.log("minor");
+            age > 13 && age < 19 ? console.log('teen') : console.log("not a teenager");
+            age > 65 ? console.log("retired") : console.log("still working...");
+
         }
-
-        if (age > 13 && age < 19) console.log('teen'); else {
-            console.log("not a teenager");
-        };
-
-        if (age > 65) console.log("retired"); else {
-            console.log("still working...");
-        }
-
-
+        ternaryExpression();
         /************************************************************* */
         //Create an object literal representing yourself.  Set it equal to a variable that appropriately describes the object.  Include the following properties:
         /*
@@ -217,7 +256,14 @@
 
         //your code...
 
-
+        const juanNunez = {
+            firstName : "Juan",
+            lastName : "Nunez",
+            age : 31,
+            gender : "Male",
+            healthy : "No",
+            hobbies : "Fishing and hunting"
+        }
 
         /************************************************************* */
 
@@ -259,27 +305,16 @@
         const nums = [1,2,3,4,5];
         // Square every number in the array.  Store the squares in a new array.
         
-
         //your code...
-
-        const squaredNums = nums.map(n => n*n)
-
+        const squaredNums = nums.map(n => n*n);
         console.log(squaredNums);
-
-
 
         const fivePlus = [1,3,5,7,9,1,3,5,2,3,1,23,4,232,3,4,1,2,2,2,3,4,4,1,12,11,23,3,4,5];
         //Remove all numbers that are less than 5.  Store the results in a new array.
 
         //your code...
-
-        const greaterThanFive = fivePlus.filter(fivePlus => fivePlus > 5)
-
+        const greaterThanFive = fivePlus.filter(fivePlus => fivePlus > 5);
         console.log(greaterThanFive);
-
-
-
-
 
         // Create an array of 20 randomly generated integers.  Calculate the sum of the elements in the array.
 
@@ -319,6 +354,9 @@
 
         const ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
         //reverse the array, without modifying / `mutating` the ones array.
+        ones.sort()
+        ones.reverse();
+        console.log(ones);
 
 
 
@@ -399,14 +437,15 @@
         // Find all devs older than 24
 
         //your code here...
-
-
-
+        let devsAge = devs.filter(i => i.age > 24)
+        console.log("Devs older than 24:", devsAge);
         /************************** */  
         // Remove all people who are not developers (i.e. no tech stack)
 
         //your code here...
+        let notDev = devs.filter(i => i.tech_stack === null)
 
+        console.log("Are devs", devs);
 
 
         /************************** */  
@@ -420,20 +459,23 @@
         // Find all female devs
 
         //your code here...
-
+        let fGender = devs.filter(f => f.gender === "f" || f.gender === "F")
+        console.log("Female Devs", fGender);
 
         /************************** */  
         // lowercase the genders of every dev
 
         //your code here...
 
-
+        let fGenderToLower = devs.filter(f => f.gender.toLowerCase() === "f")
+        console.log("Female Devs using .toLowerCase", fGenderToLower);
 
         /************************** */  
         // Sort the developers by name
 
         //your code here
-
+        devs.name.sort();
+        console.log("sorted by name", devs);
 
         /************************** */  
         // Sort the devs by age in descending order
