@@ -153,9 +153,12 @@
             // console.log(" the value of i in the loop is : " + i);
         }
 
-
         //your code...
-
+        var i = 0;
+            while (i < 10){
+            console.log("The value of i in the loop is: " + i);
+            i++;
+            }
 
 
 
@@ -164,7 +167,19 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
+        (((30 + 2) * 20)/10)^2
+        function add (){
 
+        }
+        function multiply(add){
+            
+        }
+        function divide(){
+
+        }
+        function exponent(){
+
+        }
 
         /************************************************************* */
         //Determine whether the following values are "truthy" or "falsy".  console.log() the value, whether the value is 'truthy' or 'falsy', along with your reasoning why using String interpolation values : 
@@ -212,7 +227,7 @@
 
             }
         }
-        day("tuesday");
+        day("friday");
 
         /************************************************************* */
         // Refactor the following statements to use ternary expressions:
@@ -256,15 +271,27 @@
 
         //your code...
 
-        const juanNunez = {
-            firstName : "Juan",
-            lastName : "Nunez",
+        var juanNunez = {
+            name : "Juan Nunez",
             age : 31,
             gender : "Male",
             healthy : "No",
-            hobbies : "Fishing and hunting"
-        }
+            hobbies : "Fishing and hunting",
+            profession : "Coding student",
+            education : "Bachelor's Degree",
 
+            learn : function(juanNunez){
+            console.log(this.name + " is learning JavaScript");
+            },
+            love : function(){
+                return this.healthy + ", he loves food to much!";
+            }
+        }
+        
+        whackTheCompetition : function(){
+            return "It's time boys. Those *** ** ******* at SONIC have taken too much of the " + this.profession + " game. Time to broaden our markets"
+        }
+      }
         /************************************************************* */
 
         {
@@ -320,6 +347,10 @@
 
         //your code...
 
+        function randomArray(){
+            var randoms = [...Array(4)].map(() => Math.floor(Math.random() * 9));
+        };
+        randomArray();
 
 
 
