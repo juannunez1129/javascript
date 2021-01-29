@@ -55,7 +55,6 @@ hrefLink.innerHTML = 'ayunas@teksystems.com'
 hrefLink.setAttribute("href", "mailto:ayunas@teksystems.com")
 
 const nodePeriod = document.createTextNode('.')
-// nodePeriod.innerHTML = '.'
 
 pTag2.appendChild(hrefLink)
 pTag2.appendChild(nodePeriod)
