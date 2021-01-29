@@ -106,7 +106,7 @@
 
             for (let i = 0; i < number.length; i++){
                 if (number[i] % 2 === 0){
-                    even.push(number[i]);
+                    even.push(`${number[i]} 'even'`);
                 }
                 else {
                     odd.push(number[i]);
@@ -120,7 +120,7 @@
             return arrayObjects;
 
         }
-        console.log(evenOrOddNumbers([1,2,3]));
+        console.log(evenOrOddNumbers([10,23,3,4]));
 
         /************************************************************************************/
         const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
@@ -316,13 +316,16 @@
             education : "Bachelor's Degree",
 
             learn : function(){
-            return this.name + " is learning JavaScript";
+                return this.name + " is learning JavaScript";
             },
             love : function(){
                 return this.healthy + ", I love food too much!";
             }
         }
-        
+        console.log(juanNunez.learn());
+        console.log(juanNunez.love());
+
+
         /************************************************************* */
 
         {
@@ -416,7 +419,7 @@
 
         const ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
         //reverse the array, without modifying / `mutating` the ones array.
-        ones.sort()
+        // ones.sort()
         ones.reverse();
         console.log(ones);
 
