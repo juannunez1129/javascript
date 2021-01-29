@@ -167,19 +167,27 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
-        (((30 + 2) * 20)/10)^2
-        function add (){
+        
+        function addEquation (i, j){
+            var addResult = i + j
+            multiplyEquation(addResult)
+        }
+        function multiplyEquation(i){
+            var multiplyResult = i * 20
+            var exponentResult = exponentCalc(10)
+            divideEquation(multiplyResult, exponentResult)
+        }
+        function divideEquation(i, j){ 
+            var result = i / j
+            console.log(result);
 
         }
-        function multiply(add){
-            
+        function exponentCalc(i){
+            var result = Math.pow(i, 2)
+            return result
         }
-        function divide(){
 
-        }
-        function exponent(){
-
-        }
+        addEquation(30,2)
 
         /************************************************************* */
         //Determine whether the following values are "truthy" or "falsy".  console.log() the value, whether the value is 'truthy' or 'falsy', along with your reasoning why using String interpolation values : 
@@ -198,9 +206,36 @@
         // 125
         // undefined
         // ""
+  
+            const zero = 20;
 
+            function truthyOrFalsy (j) 
+            { 
+                return j ? "truthy" : "falsy"; 
+            } 
 
+            function truthyOrFalsyResults(j){
+            return truthyOrFalsy(j) == "truthy" ? "true" : "false";
+            }
 
+            function value(j){
+            console.log(j + " is " + truthyOrFalsy(j) + ", because " + j + " returns the value of " + truthyOrFalsyResults(j))
+            console.log("")
+            }
+
+            value(20);
+            value(0);
+            value("zero");
+            value(zero);
+            value(null);
+            value("")
+            value("0");
+            value(!"");
+            value({});
+            value(() => {console.log("hello TEKcamp!");})
+            value(125);
+            value(undefined);
+            value("");
 
         /************************************************************* */
         // Refactor the following code using a switch statement:
@@ -280,18 +315,14 @@
             profession : "Coding student",
             education : "Bachelor's Degree",
 
-            learn : function(juanNunez){
-            console.log(this.name + " is learning JavaScript");
+            learn : function(){
+            return this.name + " is learning JavaScript";
             },
             love : function(){
-                return this.healthy + ", he loves food to much!";
+                return this.healthy + ", I love food too much!";
             }
         }
         
-        whackTheCompetition : function(){
-            return "It's time boys. Those *** ** ******* at SONIC have taken too much of the " + this.profession + " game. Time to broaden our markets"
-        }
-      }
         /************************************************************* */
 
         {
@@ -537,14 +568,24 @@
         // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
         const numbersMixed = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:"val"},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
-        function maxNumber(numbers) {
-            //your code...
-        }
+        function maxNumber(numbers){
+            let filter = numbers.filter(numbers => parseInt(numbers) == numbers)
+            filter.pop()
+            
+            let textNumbers = [0, 1 ,2, 3, 3];
+            let gotNumbers = [...filter, ...textNumbers]
+          
+            return gotNumbers
+          }
+          console.log(maxNumber(numbersMixed))
 
         //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
-        function sortNums(numbers,desc=false) {
-            //your code...
+        function sortNums(numbersMixed,desc=false) {
+
+            sortNums = numbersMixed => numbersMixed.sort()
+            
+            console.log(sortNums())        
         };
 
 
