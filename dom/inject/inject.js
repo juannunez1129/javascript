@@ -14,7 +14,7 @@ headingH1.appendChild(italizeTag)
 inject.appendChild(headingH1)
 
 const aTag = document.createElement('a')
-aTag.innerHTML = 'TEKsystem "TEKcamp"'
+aTag.innerHTML = 'TEKsystems "TEKcamp"'
 aTag.href = ""
 
 const headingH2 = document.createElement('h2')
