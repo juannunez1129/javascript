@@ -50,9 +50,11 @@
     unorderedList.appendChild(listItem)
     
     //done 
-    
+
     // 9. Attach an event handler to the delete button, so that when clicked it will delete the entire list item it is inside.
     
-    
+    buttonTwo.onclick = function(){
+        unorderedList.removeChild(listItem)
+    }
     
     // 10. Finally, use the focus() method to focus the input element ready for entering the next shopping list item.
