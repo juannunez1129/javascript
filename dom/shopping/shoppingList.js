@@ -5,26 +5,25 @@
 
     // 1. Create three variables that hold references to the following elements &lt;ul&gt; &lt;input&gt; &lt;button&gt; elements.
     
-    const ul = document.createElement('ul')
+    const unorderedList = document.createElement('ul')
     const input = document.createElement('input')
-    const button = document.createElement('button')
+    const buttonOne = document.createElement('button')
 
     //done
     
     // 2. Create a function that will run in response to the button being clicked.
-    
-    
-    
-    // 3. Inside the function body, start off by storing the current value of the input element in a variable.
-    
-    
-    
+    //done
+     // 3. Inside the function body, start off by storing the current value of the input element in a variable.
+     //done
     // 4. Next, empty the input element by setting its value to an empty string — ''.
+    //done
+    button.onclick = function(){
+        let userInputs = input.value
+        input.value = ''
+    }
     
-    
-    
+    //done
     // 5. Create three new elements — a list item (&lt;li&gt;), &lt;span&gt;, and &lt;button&gt;, and store them in variables.
-    
     
     
     // 6. Append the span and the button as children of the list item.
