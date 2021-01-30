@@ -25,6 +25,12 @@
     //done
     // 5. Create three new elements — a list item (&lt;li&gt;), &lt;span&gt;, and &lt;button&gt;, and store them in variables.
     
+
+    const listItem = document.createElement('li')
+    const span = document.createElement('span')
+    const buttonTwo = document.createElement('button')
+    
+    //done
     
     // 6. Append the span and the button as children of the list item.
     
