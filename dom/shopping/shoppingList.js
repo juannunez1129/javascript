@@ -44,9 +44,12 @@
     span.textContent = userInputs
     buttonOne.textContent = 'Delete'
     
+    //done
+
     // 8. Append the list item as a child of the list.
+    unorderedList.appendChild(listItem)
     
-    
+    //done 
     
     // 9. Attach an event handler to the delete button, so that when clicked it will delete the entire list item it is inside.
     
