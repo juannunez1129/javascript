@@ -38,10 +38,11 @@
     listItem.appendChild(button)
     
     //done
-    
+
     // 7. Set the text content of the span to the input element value you saved earlier, and the text content of the button to 'Delete'.
     
-    
+    span.textContent = userInputs
+    buttonOne.textContent = 'Delete'
     
     // 8. Append the list item as a child of the list.
     
