@@ -2,12 +2,11 @@
     // Do the following steps in this file, and make sure this file is linked to the shopping-list.html file
 
     //done
-
     // 1. Create three variables that hold references to the following elements &lt;ul&gt; &lt;input&gt; &lt;button&gt; elements.
     
-    const unorderedList = document.createElement('ul')
-    const input = document.createElement('input')
-    const buttonOne = document.createElement('button')
+    const unorderedList = document.querySelector('ul')
+    const input = document.querySelector('input')
+    const buttonOne = document.querySelector('button')
 
     //done
     
@@ -17,10 +16,10 @@
      //done
     // 4. Next, empty the input element by setting its value to an empty string — ''.
     //done
-    button.onclick = function(){
+    buttonOne.onclick = function(){
         let userInputs = input.value
         input.value = ''
-    }
+    
     
     //done
     // 5. Create three new elements — a list item (&lt;li&gt;), &lt;span&gt;, and &lt;button&gt;, and store them in variables.
@@ -35,7 +34,7 @@
     // 6. Append the span and the button as children of the list item.
     
     listItem.appendChild(span)
-    listItem.appendChild(button)
+    listItem.appendChild(buttonOne)
     
     //done
 
@@ -60,3 +59,5 @@
     // 10. Finally, use the focus() method to focus the input element ready for entering the next shopping list item.
 
     input.focus()
+
+}
