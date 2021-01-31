@@ -34,14 +34,14 @@
     // 6. Append the span and the button as children of the list item.
     
     listItem.appendChild(span)
-    listItem.appendChild(buttonOne)
+    listItem.appendChild(buttonTwo)
     
     //done
 
     // 7. Set the text content of the span to the input element value you saved earlier, and the text content of the button to 'Delete'.
     
     span.textContent = userInputs
-    buttonOne.textContent = 'Delete'
+    buttonTwo.textContent = 'Delete'
     
     //done
 
