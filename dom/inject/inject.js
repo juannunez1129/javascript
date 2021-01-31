@@ -37,9 +37,11 @@ inject.appendChild(orderedList)
 const listItem1 = document.createElement('li')
 const listItem2 = document.createElement('li')
 const listItem3 = document.createElement('li')
-listItem1.innerHTML = 'I learned it quickly.'
-listItem2.innerHTML = 'I can make web pages using code'
-listItem3.innerHTML = 'It’s fun.'
+
+listItem1.innerHTML = '&nbspI learned it quickly.'
+listItem2.innerHTML = '&nbspI can make web pages using code'
+listItem3.innerHTML = '&nbspIt’s fun.'
+
 orderedList.appendChild(listItem1)
 orderedList.appendChild(listItem2)
 orderedList.appendChild(listItem3)
