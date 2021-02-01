@@ -100,28 +100,19 @@
 
         //your code...
 
-        function evenOrOddNumbers(number){
-            let odd = [];
-            let even = [];
 
-            for (let i = 0; i < number.length; i++){
-                if (number[i] % 2 === 0){
-                    even.push(`${number[i]} 'even'`);
-                }
-                else {
-                    odd.push(number[i]);
+        function oddOrEven(list){
+            newList = [];
+            for (let j = 0; j <= list.length - 1; j++){
+                if (list[j] % 2 === 0 ){
+                    newList.push(list[j] + ": even");
+                } else {
+                    newList.push(list[j] + ": odd");
                 }
             }
-            const arrayObjects = {
-                odd,
-                even,
-                };
-
-            return arrayObjects;
-
+            console.log(newList);
         }
-        console.log(evenOrOddNumbers([10,23,3,4]));
-
+        oddOrEven([10,23,3,4,8,13])
         /************************************************************************************/
         const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
         // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
@@ -138,12 +129,35 @@
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
         //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
-            foodArray[5] = "school";
-            console.log(foodArray[5]);
 
         const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
         // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
+        console.log(foodArray.slice(-1)[0]);
 
+        var school = "TEKcamp";
+        foodArray[foodArray.length - 1] = school;
+        console.log(foodArray.slice(-1)[0]);
+        
+        
+        console.log("") 
+        
+        
+        foodLength = foodArray.length;
+        
+        for (i = 0; i  < foodLength; i++){
+          var check = foodArray[i];
+          var adj = adjectiveArray[i];
+          
+          var checkLastCharacter = check[check.length - 1];
+        
+          if (checkLastCharacter == "s"){
+          isPlural = " are "
+          }
+          else{
+          isPlural = " is "
+          }
+          console.log(check + isPlural + adj)
+          }
 
         /************************************************************* */
         // Refactor the for() loop to be a while loop.
@@ -596,9 +610,18 @@
         /************************************************************* */
         //Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
 
+// arrow function for es6+
+// es5 syntax
+    function helloWorld() {
+        console.log('HELLO WORLD!!');
+    }
+    helloWorld();
+  // VS
+  // es6+
+    const helloWorld = () => console.log('HELLO WORLD!!');
+    helloWorld();
 
-            //your code...
-
+    // This function is useful because it makes the code much cleaner and it's faster than the es5 way.
 
 
         /************************************************************* */
