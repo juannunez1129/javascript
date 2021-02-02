@@ -434,8 +434,11 @@
         const ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
         //reverse the array, without modifying / `mutating` the ones array.
         // ones.sort()
-        ones.reverse();
-        console.log(ones);
+        const reversedArray = [];
+        for (let i = ones.length - 1; i > -1; i--) {
+        reversedArray.push(ones[i]);
+        }
+        console.log(reversedArray);
 
 
 
@@ -443,8 +446,9 @@
         //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
         function performer(cb) {
-            //code goes here
+            console.log( cb % 2 === 0);
         }
+        [1,4,5,8,10,12,13].filter(performer);
 
 
         /************************************************************* */
@@ -547,14 +551,15 @@
         //your code here...
 
         let fGenderToLower = devs.filter(f => f.gender.toLowerCase() === "f")
+        let mGenderToLower = devs.filter(m => m.gender.toLowerCase() === "m")
+
         console.log("Female Devs using .toLowerCase", fGenderToLower);
+        console.log("male Devs using .toLowerCase", mGenderToLower);
 
         /************************** */  
         // Sort the developers by name
 
         //your code here
-        devs.name.sort();
-        console.log("sorted by name", devs);
 
         /************************** */  
         // Sort the devs by age in descending order
@@ -566,8 +571,6 @@
         /************************** */  
         // Sort the male coders by age
 
-        //your code here
-
 
         /************************** */  
         // For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
@@ -578,7 +581,13 @@
         Dr. Patel is not a developer.
         */
 
-        //your code here
+       devs.forEach((dev) => {
+        if (!dev.tech_stack) {
+          console.log(dev.name + " is not a developer.");
+        } else {
+          console.log(dev.name + " specializes in " + dev.tech_stack);
+        }
+      });
 
 
         /************************************************************* */
