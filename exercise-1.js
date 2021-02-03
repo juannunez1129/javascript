@@ -583,8 +583,19 @@
         /************************** */  
         // Sort the developers by name
 
-        //your code here
-
+        const sortByDevName = devs.sort(function (a, b) {
+            const devNameA = a.name;
+            const devNameB = b.name;
+            if (devNameA < devNameB) {
+              return -1;
+            }
+            if (devNameA > devNameB) {
+              return 1;
+            }else
+            return 0;
+          });
+          
+          console.log("All devs sorted by name", sortByDevName);
         /************************** */  
         // Sort the devs by age in descending order
 
