@@ -353,24 +353,31 @@
 
 
             // 1.
-            if(year > 2000 && year < 2100) {
-                console.log("welcome to the 21st century");
-            }
+            // if(year > 2000 && year < 2100) {
+            //     console.log("welcome to the 21st century");
             
-            // 2.
-            for(let i=0; i<nums.length; i++) {
-                sum += nums[i];
-            }
+            year > 2000 && year < 2100 ? console.log("welcome to the 21st century") : "You're not in the 21st century";
+        
+            //2.
+            // for(let i=0; i<nums.length; i++) {
+            //     sum += nums[i];
+            // }
+            // console.log(sum);
+            sum = nums.reduce((i, j) => i + j, 0);
             console.log(sum);
-            
+
             
             // 3.
-            while(i < nums.length) {
-                doubled.push(nums[i]*2);
-                i++;
-            }
+            // while(i < nums.length) {
+            //     doubled.push(nums[i]*2);
+            //     i++;
+            // }
             
-            console.log(doubled);
+            // console.log(doubled);
+
+           
+                nums.forEach((j) => doubled.push(j * 2));
+                console.log(doubled);
         }
 
 
@@ -395,10 +402,13 @@
 
         //your code...
 
-        function randomArray(){
-            var randoms = [...Array(4)].map(() => Math.floor(Math.random() * 9));
-        };
-        randomArray();
+        const randomNums = [];
+        for (let i = 0; i < 20; i++) {
+                let randomNum = Math.floor(Math.random() * 10 + 10);
+                randomNums.push(randomNum);
+                console.log(randomNums);
+        }
+        console.log(randomNums.reduce((i, j) => i + j, 0));
 
 
 
@@ -422,9 +432,22 @@
 
         */
 
-        function chessCalc(pieces) {
+        function chessCalc(chessObj) {
             //your code here
+
+        var chessObj = {
+            pawn : 1,
+            rook : 5,
+            bishop : 3,
+            knight : 3,
+            Queen : 9,
+            King : 0
+
         }
+        const sumValues = chessObj => Object.values(obj).reduce((a, b) => a + b);
+        console.log(chessCalc);        
+
+    }
 
 
 
@@ -445,10 +468,14 @@
         /************************************************************* */
         //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
-        function performer(cb) {
-            console.log( cb % 2 === 0);
-        }
-        [1,4,5,8,10,12,13].filter(performer);
+        function cb(age) {
+            return `I am ${age} years old.`;
+          }
+          
+          function performer(cb) {
+            return cb("31");
+          }
+          console.log(performer(cb));
 
 
         /************************************************************* */
@@ -534,8 +561,9 @@
         /************************** */  
         // Calculate the total age of all the devs
 
-        //your code here...
+        let sumAge = devs.filter(age => age.age += age.age)
 
+        console.log("Sum of all ages: ", sumAge)
 
 
         /************************** */  
@@ -653,8 +681,30 @@
         //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
 
         // ex : 2,3 => doMath(2,3) => adding : 5
-        const operations = [];
-        function doMath(x,y) {};
+
+const a = 21
+const b = 8
+        
+const operations = [
+
+  function addNums() {
+                  return a + b;
+                },
+
+  function subtractNums(){
+                  return a - b;
+                },
+
+  function multiplyNums(){
+                    return a * b;
+                  },
+
+  function divisionNums(){
+                    return a / b;
+                  }
+]
+
+doMath();        
 
         //your code...
 
@@ -663,8 +713,14 @@
         /************************************************************* */
         //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
-        //your code...
-
+        function mulptiply(x) {
+            return `I am ${age} years old.`;
+          }
+          
+          function performer(cb) {
+            return cb("31");
+          }
+          console.log(performer(cb));
 
         //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
 
