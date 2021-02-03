@@ -432,22 +432,19 @@
 
         */
 
-        function chessCalc(chessObj) {
-            //your code here
-
-        var chessObj = {
-            pawn : 1,
-            rook : 5,
-            bishop : 3,
-            knight : 3,
-            Queen : 9,
-            King : 0
-
-        }
-        const sumValues = chessObj => Object.values(obj).reduce((a, b) => a + b);
-        console.log(chessCalc);        
-
+       function chessCalc(pieces) {
+        //your code here
+        const valueOfPieces = { 'pawn': 1, 
+        'bishop': 3, 
+        'knight': 3, 
+        'rook': 5,
+        'queen': 9 };
+        return pieces   
+            .filter(piece => valueOfPieces[piece])
+            .reduce((total, piece) => total + valueOfPieces[piece], 0);
     }
+
+    console.log(chessCalc(['king','queen','pawn','pawn','pawn','bishop']));
 
 
 
@@ -561,9 +558,8 @@
         /************************** */  
         // Calculate the total age of all the devs
 
-        let sumAge = devs.filter(age => age.age += age.age)
-
-        console.log("Sum of all ages: ", sumAge)
+        const sumDevAge = devs.reduce((total, {age}) => total + age, 0)
+        console.log('Sum of age: ', sumDevAge);
 
 
         /************************** */  
@@ -592,13 +588,17 @@
         /************************** */  
         // Sort the devs by age in descending order
 
-        //your code here
-
+        const devsDescendingAge = devs.sort((i,j) => i.age - j.age);
+        console.log("Devs by descending order by age: ",devsDescendingAge);
 
 
         /************************** */  
         // Sort the male coders by age
 
+        const maleDevsByAge = devs
+            .filter(({gender}) => gender == 'm')
+            .sort((i,j) => i.age - j.age);
+        console.log("male coders by age: ", maleDevsByAge);
 
         /************************** */  
         // For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
@@ -671,11 +671,26 @@
 
         //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
 
-        //your code...
-
+        const mapObj = new Map();
+        mapObj.set(company = {
+            name : "TEKsystems",
+            location : "online"
+        },"object");
+        mapObj.set(1 == 1, "bool")
+        mapObj.set(null, "null")
+        mapObj.set("Bananas", "string")
+        mapObj.set(4657, "number")
+        
+        console.log(mapObj.has(null)); 
+        console.log("was not rendered properly")
+        
 
         //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
-
+        const newArray =[];
+            for (const [key, value] of mapObj.entries()) {
+            newArray.push(value)
+            }   
+        console.log(newArray)
 
         /************************************************************* */
         //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
@@ -706,30 +721,43 @@ const operations = [
 
 doMath();        
 
-        //your code...
-
-
 
         /************************************************************* */
         //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
-        function mulptiply(x) {
-            return `I am ${age} years old.`;
-          }
-          
-          function performer(cb) {
-            return cb("31");
-          }
-          console.log(performer(cb));
+        function multiple(x){
+            function fn(y) {
+              return x * y;
+            };
+            return fn;
+            }
+            
+            let threes = multiple(3);
+            console.log(threes(3))
+
 
         //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
-
-        //your code
 
 
         // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
 
-        //your code...
+        //your code... 
+
+        const stockValue = 29;
+        const stockIncrease = stockGain(stockValue);
+        const r = 0.05;
+        
+        function stockGain(basis){
+          return yrs => yrs * basis * r;
+        }
+        
+        console.log(stockIncrease(3))
+         
+        const futureValue = stockValue + stockIncrease(3);
+        
+        console.log(futureValue)
+
+        
 
 
 
