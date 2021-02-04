@@ -689,8 +689,8 @@
         },"object");
         mapObj.set(1 == 1, "bool")
         mapObj.set(null, "null")
-        mapObj.set("Bananas", "string")
-        mapObj.set(4657, "number")
+        mapObj.set("string", "string")
+        mapObj.set(4657, "num")
         
         console.log(mapObj.has(null)); 
         console.log("was not rendered properly")
