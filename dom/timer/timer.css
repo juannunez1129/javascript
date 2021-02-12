@@ -10,4 +10,17 @@
     display : flex;
     justify-content: center;
     margin : 20px;
+
+}
+
+#start{
+    background-color: green;
+}
+
+#stop{
+    background-color: red;
+}
+
+#reset{
+    background-color: royalblue;
 }
